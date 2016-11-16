@@ -58,9 +58,10 @@ function callApi(apiurl){
         console.log(desc);
         $("#desc").text(desc);
         console.log(temp + " F");
-        $("#temp").text(temp + " F");
-        $("#tempC").text(tempC + " C");
+        $("#temp").text(temp);
+        $("#tempC").text(tempC);
         $("#tempC").hide();
+        $("#C").hide();
         console.log(tempC + " C"); 
         $("#humidity").text(hum + "% humidity");      
         console.log(hum + "%");
@@ -72,6 +73,8 @@ getLocation();
 $("button").click(function(){
 	console.log('click');
 $("#temp").toggle();
+$("#C").toggle();
 $("#tempC").toggle();
+$("#F").toggle();
 });
 });

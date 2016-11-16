@@ -1,0 +1,27 @@
+html {
+	background-color: lightblue;
+	font-family: monospace;
+}
+.container{
+background-color: lightblue;
+border: 3px solid #73AD21;
+border-radius: 25px;
+}
+
+header {
+	font-style: oblique;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+footer {
+	font-style: oblique;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+        #url{
+ min-height: 100px;
+}
+   
+        #humidity{
+color: darkblue;
+}
