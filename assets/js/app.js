@@ -46,8 +46,10 @@ function callApi(apiurl){
         url = "http://openweathermap.org/img/w/" + result.weather[0].icon + ".png"
         city = result.name;
         desc = result.weather[0].description;
-        temp = result.main.temp * 9/5 - 459.67;
-        tempC = result.main.temp  - 273.15;
+        temp = parseInt(result.main.temp * 9/5 - 459.67);
+ 
+        tempC = parseInt(result.main.temp  - 273.15);
+
         hum = result.main.humidity;
         console.log(url);
         $("#url").attr("src", url);
@@ -56,15 +58,20 @@ function callApi(apiurl){
         console.log(desc);
         $("#desc").text(desc);
         console.log(temp + " F");
-        $("#temp").text(temp);
+        $("#temp").text(temp + " F");
+        $("#tempC").text(tempC + " C");
+        $("#tempC").hide();
         console.log(tempC + " C"); 
-        $("#humidity").text(hum + "%");      
+        $("#humidity").text(hum + "% humidity");      
         console.log(hum + "%");
     }});
 }
 
 $(function(){
 getLocation();
-
-
+$("button").click(function(){
+	console.log('click');
+$("#temp").toggle();
+$("#tempC").toggle();
+});
 });
