@@ -1,0 +1,26 @@
+{
+  "name": "weatherthestorm",
+  "version": "0.2.0",
+  "description": "open weather api calls",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waltdakind/openweather"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Walter Mattingly",
+  "license": "MIT"
+}
