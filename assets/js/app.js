@@ -11,6 +11,8 @@ var url,
     city,
     code;
 
+var googleApiKey = process.env.geolocationAPIkey;
+var openWeatherApiKey = process.env.openweatherAPIkey;
 
 var apiGeolocationSuccess = function(position) {
 lat = position.coords.latitude;
@@ -19,8 +21,11 @@ makeUrl(lat, lon);
 };
 
 var tryAPIGeolocation = function() {
-	jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+	jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key="+googleApiKey, function(success) {
 		apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+		lat = success.location.lat;
+        lon = success.location.lng; 
+        makeUrl(lat, lon);
   })
   .fail(function(err) {
     alert("API Geolocation error! \n\n"+err);
@@ -77,7 +82,7 @@ var tryGeolocation = function() {
 // create the url for the api by lat and lon
 // api.openweathermap.org/data/2.5/weather?lat=35&lon=139
 function makeUrl(lat, lon){
-apiurl= 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=fe96a3e1611ec2b7c051b6b642af8eb9';
+apiurl= 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
 console.log(apiurl);
 callApi(apiurl);
 }
@@ -92,7 +97,7 @@ function callApi(apiurl){
        // $(".container").html(result);
         console.log(result);
         //url for png
-        url = "http://openweathermap.org/img/w/" + result.weather[0].icon + ".png"
+        url = "https://openweathermap.org/img/w/" + result.weather[0].icon + ".png"
         city = result.name;
         desc = result.weather[0].description;
         temp = parseInt(result.main.temp * 9/5 - 459.67);
