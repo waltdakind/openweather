@@ -11,8 +11,10 @@ var url,
     city,
     code;
 
-var googleApiKey = process.env.geolocationAPIkey;
-var openWeatherApiKey = process.env.openweatherAPIkey;
+// var googleApiKey = process.env.geolocationAPIkey;
+// var openWeatherApiKey = process.env.openweatherAPIkey;
+var googleApiKey = "AIzaSyBxsGLiCMxR3-yHKCpTmMY-x4T_uXhaUBo";
+var openWeatherApiKey = "fe96a3e1611ec2b7c051b6b642af8eb9";
 
 var apiGeolocationSuccess = function(position) {
 lat = position.coords.latitude;
@@ -25,6 +27,7 @@ var tryAPIGeolocation = function() {
 		apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
 		lat = success.location.lat;
         lon = success.location.lng; 
+        console.log(lat + " ," + lon);
         makeUrl(lat, lon);
   })
   .fail(function(err) {
@@ -82,7 +85,7 @@ var tryGeolocation = function() {
 // create the url for the api by lat and lon
 // api.openweathermap.org/data/2.5/weather?lat=35&lon=139
 function makeUrl(lat, lon){
-apiurl= 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
+apiurl= 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
 console.log(apiurl);
 callApi(apiurl);
 }

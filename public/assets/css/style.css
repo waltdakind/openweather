@@ -1,22 +1,28 @@
 html {
-	background-color: lightblue;
-	font-family: monospace;
+
+	font-family: Gill Sans Extrabold, sans-serif;
 }
 .container{
-background-color: lightblue;
-border: 3px solid #73AD21;
-border-radius: 25px;
-}
 
+	text-align: center;
+             background-color: lightblue;
+             border: 5px solid #73AD21;
+             border-radius: 25px;
+}
+img {
+    display: block;
+    margin: auto;
+    width: 20%;
+}
 header {
 	font-style: oblique;
 	text-align: center;
-	padding: 5px 5px 5px 5px;
+	padding: 2px 2px 2px 2px;
 }
 footer {
 	font-style: oblique;
 	text-align: center;
-	padding: 5px 5px 5px 5px;
+	padding: 2px 2px 2px 2px;
 }
         #url{
  min-height: 100px;
