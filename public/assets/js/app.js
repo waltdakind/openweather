@@ -85,7 +85,7 @@ var tryGeolocation = function() {
 // create the url for the api by lat and lon
 // api.openweathermap.org/data/2.5/weather?lat=35&lon=139
 function makeUrl(lat, lon){
-apiurl= 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
+apiurl= 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
 console.log(apiurl);
 callApi(apiurl);
 }
