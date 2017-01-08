@@ -26,9 +26,9 @@ var tryAPIGeolocation = function() {
 	jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key="+googleApiKey, function(success) {
 		apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
 		lat = success.location.lat;
-        lon = success.location.lng; 
-        console.log(lat + " ," + lon);
-        makeUrl(lat, lon);
+    lon = success.location.lng; 
+     console.log(lat + " ," + lon);
+     makeUrl(lat, lon);
   })
   .fail(function(err) {
     alert("API Geolocation error! \n\n"+err);
@@ -67,25 +67,10 @@ var tryGeolocation = function() {
 };
 
 
-
-// function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(logPosition);
-//     } else {
-//         alert("Geolocation is not supported by this browser.");
-//     }
-// }
-// function logPosition(position) {
-// lat = position.coords.latitude;
-// lon = position.coords.longitude; 
-// console.log(lat + ", "+ lon);
-// makeUrl(lat, lon);
-// }
-
 // create the url for the api by lat and lon
 // api.openweathermap.org/data/2.5/weather?lat=35&lon=139
 function makeUrl(lat, lon){
-apiurl= 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
+apiurl= 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + openWeatherApiKey;
 console.log(apiurl);
 callApi(apiurl);
 }

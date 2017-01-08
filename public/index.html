@@ -7,38 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./node_modules/geolocator/dist/geolocator.min.js"></script>
-<!-- <script src="./node_modules/requirejs/require.js" data-main="./public/scripts/app"></script> -->
-<script type="text/javascript">
 
-    geolocator.config({
-        language: "en",
-        google: {
-            version: "3",
-            key: "AIzaSyBxsGLiCMxR3-yHKCpTmMY-x4T_uXhaUBo"
-        }
-    });
-
-    window.onload = function () {
-        var options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumWait: 10000,     // max wait time for desired accuracy
-            maximumAge: 0,          // disable cache
-            desiredAccuracy: 30,    // meters
-            fallbackToIP: true,     // fallback to IP if Geolocation fails or rejected
-            addressLookup: true,    // requires Google API key if true
-            timezone: false,         // requires Google API key if true
-            map: "map-canvas",      // interactive map element id (or options object)
-            staticMap: false         // map image URL (boolean or options object)
-        };
-        geolocator.locate(options, function (err, location) {
-            if (err) return console.log(err);
-            console.log(location);
-        });
-    };
-
-</script>
 <script src="./assets/js/app.js"></script>
 </head>
 <title>
@@ -63,7 +32,7 @@
  </div>
 
 	<footer>
-	<p>2016 <a href="http://www.waltermattingly.com">Walter Mattingly  &copy;</a> <a href="https://github.com/waltdakind">My GitHub Repo</a></p>	
+	<p>2016 <a href="http://www.waltermattingly.com">Walter Mattingly  &copy;</a> || <a href="https://github.com/waltdakind">My GitHub Repo</a></p>	
 	</footer>
 	</body>	
 </html>
