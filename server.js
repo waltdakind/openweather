@@ -1,12 +1,28 @@
-var http = require('http');
-var https = require('https');
-var express = require('express');
-var app = express();
 
-//Lets define a port we want to listen to
-const PORT= process.env.PORT || 8080; 
+//==========================================================================
+// express routing stuff 
+//==========================================================================
+const http = require('http');
+const https = require('https');
+const path = require('path');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const morgan     = require('morgan');
+const geolocator = require('geolocator');
 
+// Define the port to run on
+// =============================================================================
+const PORT = process.env.PORT || 8080;
+app.set('PORT', PORT);
+
+//serve public folder
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/node_modules'));
 
-app.listen(process.env.PORT || 8080);
+// =============================================================================
+// Listen for requests
+// =============================================================================
+const server = app.listen(app.get('PORT'), () => {
+  console.log('So, I guess you wanted to run your app on port ' + PORT);
+});
