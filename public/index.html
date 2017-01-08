@@ -30,6 +30,20 @@
  	<p id ="humidity"></p> 
  <div id="map-canvas"></div>
  </div>
+<!-- http://ip-api.com/json -->
+<script>
+ $.getJSON("https://ip-api.com/json/?callback=?", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});    
+</script>
 
 	<footer>
 	<p>2016 <a href="http://www.waltermattingly.com">Walter Mattingly  &copy;</a> || <a href="https://github.com/waltdakind">My GitHub Repo</a></p>	

@@ -2,14 +2,14 @@
 //==========================================================================
 // express routing stuff 
 //==========================================================================
-const http = require('http');
-const https = require('https');
+//const http = require('http');
+//const https = require('https');
 const path = require('path');
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const morgan     = require('morgan');
-const geolocator = require('geolocator');
+//const bodyParser = require('body-parser');
+//const morgan     = require('morgan');
+//const geolocator = require('geolocator');
 
 // Define the port to run on
 // =============================================================================
